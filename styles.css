@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+:root {
+    --background-color: #e8e6e6;
+    --text-color: #333;
+    --header-bg-color: #ffffff;
+    --header-text-color: #020202;
+    --primary-color: #ffcc00;
+    --project-bg-color: #fff;
+    --project-border-color: #ddd;
+    --form-bg-color: #fff;
+    --form-border-color: #ddd;
+    --footer-bg-color: #333;
+    --footer-text-color: #fff;
+}
+
+body.dark-mode {
+    --background-color: #000000;
+    --text-color: #a540e0;
+    --header-bg-color: #250f31;
+    --header-text-color: #ffffff;
+    --primary-color: #fff;
+    --project-bg-color: #250f31;
+    --project-border-color: #4b285f;
+    --form-bg-color: #250f31;
+    --form-border-color: #666666;
+    --footer-bg-color: #555555;
+    --footer-text-color: #ffffff;
+}
+
+
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background: var(--header-bg-color);
+    color: var(--header-text-color);
+    padding: 1.5rem 0;
+    text-align: center;
+    height: 60vh;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: var(--header-text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.contenedor-change-mode {
+    position: fixed;
+    bottom: 20px;
+    /* Ajusta la distancia desde la parte inferior de la pantalla */
+    right: 20px;
+    /* Ajusta la distancia desde el lado derecho de la pantalla */
+    z-index: 9999;
+    /* Asegura que el botón esté por encima del resto del contenido */
+}
+
+.project {
+    border-radius: 5px;
+}
+
+
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+}
+
+#theme-toggle {
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+    /* Hace el botón redondo */
+    padding: 10px;
+    /* Ajusta el tamaño del botón según sea necesario */
+    color: var(--primary-color);
+    /* Hace que el texto dentro del botón sea blanco */
+}
+
+
+
+#theme-toggle:hover {
+    background-color: var(--header-text-color);
+    color: var(--primary-color);
+}
+
+main {
+    flex: 1;
+}
+
+section {
+    padding: 3rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-color);
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 0.5rem auto 1rem;
+}
+
+#about p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.project {
+    background: var(--project-bg-color);
+    border: 1px solid var(--project-border-color);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.project a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.project a:hover {
+    color: var(--text-color);
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+#skills ul li {
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 3px;
+    font-size: 1.1rem;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+#skills ul li:hover {
+    background: var(--text-color);
+    color: var(--header-text-color);
+}
+
+form {
+    background: var(--form-bg-color);
+    padding: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+}
+
+form:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--form-border-color);
+    border-radius: 3px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+form button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--header-bg-color);
+    color: var(--header-text-color);
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: var(--primary-color);
+    color: var(--header-bg-color);
+}
+
+footer {
+    background: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Estilos específicos para tablet */
+@media only screen and (max-width: 768px) {
+    .contenedor-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenedor-menu {
+        display: none !important;
+        /* Oculta el menú en dispositivos tablet */
+    }
+
+    .header-principal {
+        margin-bottom: 20px;
+        /* Espacio entre .header-principal y .contenedor-change-mode */
+    }
+}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 480px) {
+    .menu {
+        display: none;
+    }
+
+    header {
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 40vh;
+        padding-bottom: 55vh;
+    }
+}
