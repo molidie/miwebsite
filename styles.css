@@ -316,4 +316,45 @@ footer p {
         padding-top: 40vh;
         padding-bottom: 55vh;
     }
+    .contact{
+        width: auto;
+    }
+}
+
+/* Estilos para el iframe en dispositivos móviles */
+#contact iframe {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Ajustes generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor para el iframe */
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Estilos para tablets y dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    #contact iframe {
+        width: 100%;
+        height: 600px; /* Ajusta según sea necesario */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #contact iframe {
+        width: 100%;
+        height: 500px; /* Ajusta según sea necesario */
+    }
 }
